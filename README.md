@@ -1,42 +1,39 @@
 # nguyenvietduong.com
 
-Website cá nhân tĩnh (HTML/CSS/JS), chạy miễn phí trên GitHub Pages.
+Website cá nhân tĩnh, chạy trên Cloudflare Pages (nối với GitHub), sửa nội dung qua trang quản trị **Pages CMS**.
 
 ## Cấu trúc
 
 ```
-index.html          Trang chủ: nội dung các mục
-assets/style.css    Màu sắc, bố cục (đổi --accent để đổi màu nhấn)
-assets/main.js      Danh sách ảnh trong bộ sưu tập (mảng PHOTOS)
-images/             Bỏ ảnh của bạn vào đây
-files/cv.pdf        File CV để tải về
-CNAME               Tên miền riêng
+index.html, blog.html, post.html   Khung các trang (ít khi phải sửa)
+assets/style.css                   Màu sắc, font, bố cục
+assets/main.js                     Đọc dữ liệu và hiển thị
+data/site.json                     Ảnh nền đầu trang, hồ sơ, chuyên môn, liên hệ
+data/photos.json                   Bộ sưu tập ảnh
+data/places.json                   Hành trình & văn hóa
+data/posts.json                    Bài viết blog
+images/                            Ảnh và file tải lên
+.pages.yml                         Cấu hình trang quản trị
 ```
 
-## Sửa nội dung
+## Sửa nội dung bằng trang quản trị (Pages CMS)
 
-- Chữ: mở `index.html`, thay các chỗ trong ngoặc vuông `[...]`.
-- Ảnh bộ sưu tập: chép ảnh vào `images/`, rồi điền `src: 'images/ten-anh.jpg'` trong `assets/main.js`.
-  Nên nén ảnh còn chiều dài khoảng 2000px, dưới 500 KB (dùng squoosh.app).
-- Ảnh đầu trang: trong `assets/style.css`, tìm mục `.hero` cuối file, làm theo ghi chú ở đó.
-- CV: đặt file vào `files/cv.pdf`.
+Lần đầu:
+1. Vào https://app.pagescms.org, bấm **Sign in with GitHub**.
+2. Cho phép Pages CMS truy cập repo `nguyenvietduong.com` (chọn *Only select repositories*).
+3. Chọn repo, nhánh `main`. Menu trái hiện: Bài viết blog, Bộ sưu tập ảnh, Hành trình & văn hóa, Trang chủ/hồ sơ/chuyên môn.
 
-## Đưa lên GitHub Pages
+Mỗi lần sửa:
+- Vào mục muốn sửa, chỉnh nội dung hoặc tải ảnh lên, bấm **Save**.
+- Pages CMS lưu thẳng vào GitHub, Cloudflare tự cập nhật website sau khoảng 1 phút.
 
-1. Tạo tài khoản GitHub, tạo repo mới (Public), ví dụ tên `nguyenvietduong.com`.
-2. Bấm **Add file → Upload files**, kéo toàn bộ thư mục này vào, bấm **Commit changes**.
-3. Vào **Settings → Pages**: Source = *Deploy from a branch*, Branch = `main`, thư mục `/ (root)`, bấm Save.
-4. Ở ô **Custom domain** nhập `nguyenvietduong.com`, Save.
+Viết bài mới: **Bài viết blog** → **Add an entry** → điền tiêu đề, đường dẫn (không dấu, vd. `chuyen-di-ha-giang`), ngày, nội dung → Save.
+Ẩn bài tạm thời: bỏ tích **Hiển thị trên website**.
 
-## Trỏ tên miền (tại nơi mua tên miền, mục quản lý DNS)
+Đổi ảnh nền đầu trang: **Trang chủ, hồ sơ & chuyên môn** → **Phần đầu trang** → **Ảnh nền đầu trang**.
 
-| Loại  | Tên (Host) | Giá trị |
-|-------|-----------|---------|
-| A     | @         | 185.199.108.153 |
-| A     | @         | 185.199.109.153 |
-| A     | @         | 185.199.110.153 |
-| A     | @         | 185.199.111.153 |
-| CNAME | www       | `<tên-tài-khoản-github>.github.io` |
+Mẹo ảnh: nén ảnh trước khi tải lên (squoosh.app), cạnh dài ~2000–2400px, dưới 500 KB.
 
-Xóa các bản ghi A/CNAME cũ cho `@` và `www` nếu có. DNS cần vài phút đến vài giờ để cập nhật.
-Khi GitHub báo kiểm tra DNS thành công, tích **Enforce HTTPS**.
+## Đổi màu
+
+Đầu file `assets/style.css`: sửa `--accent` (màu nhấn) và `--bg` (màu nền).

@@ -1,0 +1,50 @@
+{
+  "hero": {
+    "eyebrow": "QUA ỐNG KÍNH & CÔNG VIỆC",
+    "title": "Lưu lại những gì tôi thấy, làm và nghĩ.",
+    "highlight": "thấy",
+    "subtitle": "[Chức danh] · [Nơi sống / làm việc]",
+    "image": ""
+  },
+  "profile": {
+    "intro": "[Hai, ba câu giới thiệu bản thân và công việc hiện tại.]",
+    "cv": "",
+    "work": [
+      { "title": "[Vị trí] · [Đơn vị]", "time": "[Năm] — nay" },
+      { "title": "[Vị trí] · [Đơn vị]", "time": "[Năm] — [Năm]" }
+    ],
+    "education": [
+      { "title": "[Bằng cấp] · [Trường]", "time": "[Năm] — [Năm]" },
+      { "title": "[Chứng chỉ / khóa học]", "time": "[Năm]" }
+    ],
+    "research": [
+      { "title": "[Tên đề tài]", "time": "[Cấp đề tài / tạp chí] · [Năm]" },
+      { "title": "[Tên đề tài]", "time": "[Hội nghị] · [Năm]" }
+    ],
+    "awards": [
+      { "title": "[Giải thưởng / danh hiệu]", "time": "[Đơn vị trao] · [Năm]" },
+      { "title": "[Hoạt động tiêu biểu]", "time": "[Năm]" }
+    ]
+  },
+  "expertise": {
+    "summary": "[Một câu tóm tắt lĩnh vực chuyên môn và thế mạnh của bạn.]",
+    "skills": [
+      { "group": "[Nhóm kỹ năng chuyên môn]", "items": ["[Kỹ năng]", "[Kỹ năng]", "[Kỹ năng]"] },
+      { "group": "[Công cụ / phần mềm]", "items": ["[Công cụ]", "[Công cụ]", "[Công cụ]"] },
+      { "group": "Kỹ năng mềm", "items": ["[Quản lý dự án]", "[Làm việc nhóm]", "[Thuyết trình]"] },
+      { "group": "Ngoại ngữ & chứng chỉ", "items": ["[Tiếng Anh — trình độ]", "[Chứng chỉ]"] }
+    ],
+    "projects": [
+      { "type": "chuyen-mon", "year": "[Năm]", "title": "[Tên dự án chuyên môn 1]", "context": "[Vấn đề cần giải quyết, đơn vị chủ trì / khách hàng.]", "role": "[Vị trí của bạn và phần việc chính.]", "result": "[Kết quả cụ thể, số liệu nếu có.]", "tags": ["[Công cụ]", "[Kỹ năng]"] },
+      { "type": "chuyen-mon", "year": "[Năm]", "title": "[Tên dự án chuyên môn 2]", "context": "[Vấn đề cần giải quyết.]", "role": "[Vai trò của bạn.]", "result": "[Kết quả.]", "tags": ["[Công cụ]"] },
+      { "type": "thuc-te", "year": "[Năm]", "title": "[Tên dự án thực tế 1]", "context": "[Nơi triển khai.]", "role": "[Bạn đã trực tiếp làm gì.]", "result": "[Sản phẩm / tác động thực tế.]", "tags": ["[Kỹ năng]"] },
+      { "type": "thuc-te", "year": "[Năm]", "title": "[Tên dự án thực tế 2]", "context": "[Nơi triển khai.]", "role": "[Bạn đã trực tiếp làm gì.]", "result": "[Sản phẩm / tác động thực tế.]", "tags": ["[Kỹ năng]"] }
+    ]
+  },
+  "contact": {
+    "email": "[email@cua-ban.com]",
+    "facebook": "",
+    "instagram": "",
+    "linkedin": ""
+  }
+}

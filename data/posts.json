@@ -1,0 +1,12 @@
+[
+  {
+    "slug": "bai-viet-mau",
+    "title": "[Tiêu đề bài viết mẫu]",
+    "date": "2026-11-25",
+    "topic": "[Chủ đề]",
+    "cover": "",
+    "excerpt": "[Một, hai câu tóm tắt nội dung bài viết, hiện ở danh sách blog.]",
+    "body": "<p>Đây là bài viết mẫu. Vào trang quản trị để sửa hoặc xóa bài này, và thêm bài mới.</p><h2>Một tiêu đề nhỏ</h2><p>Bạn có thể in <strong>đậm</strong>, <em>nghiêng</em>, chèn liên kết, danh sách và ảnh ngay trong trình soạn thảo.</p><ul><li>Ý thứ nhất</li><li>Ý thứ hai</li></ul>",
+    "published": true
+  }
+]

@@ -4,42 +4,40 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Nguyễn Viết Dương — Ảnh, hành trình &amp; công việc</title>
-<meta name="description" content="Trang cá nhân của Nguyễn Viết Dương: hồ sơ, dự án, nghiên cứu, nhiếp ảnh, hành trình và blog.">
+<meta name="description" content="Trang cá nhân của Nguyễn Viết Dương: hồ sơ, chuyên môn, nghiên cứu, nhiếp ảnh, hành trình và blog.">
 <meta property="og:title" content="Nguyễn Viết Dương">
-<meta property="og:description" content="Lưu lại những gì tôi thấy, làm và nghĩ.">
 <meta property="og:url" content="https://nguyenvietduong.com/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap">
 <link rel="stylesheet" href="assets/style.css">
 </head>
-<body>
+<body data-page="home">
 
 <header class="site-header">
-  <a href="#top" class="logo">NGUYỄN VIẾT DƯƠNG</a>
+  <a href="index.html#top" class="logo">NGUYỄN VIẾT DƯƠNG</a>
   <button class="menu-btn" type="button" aria-label="Mở menu" aria-expanded="false" aria-controls="nav">
     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
   </button>
   <nav id="nav" class="nav">
-    <a href="#anh">Ảnh</a>
-    <a href="#hanh-trinh">Hành trình</a>
-    <a href="#ho-so">Hồ sơ</a>
-    <a href="#chuyen-mon">Chuyên môn</a>
-    <a href="#blog">Blog</a>
+    <a href="index.html#anh">Ảnh</a>
+    <a href="index.html#hanh-trinh">Hành trình</a>
+    <a href="index.html#ho-so">Hồ sơ</a>
+    <a href="index.html#chuyen-mon">Chuyên môn</a>
+    <a href="blog.html">Blog</a>
   </nav>
 </header>
 
 <main>
-  <!-- ===== ĐẦU TRANG: thay ảnh nền trong style.css (.hero) ===== -->
+  <!-- Nội dung các mục được sửa trong trang quản trị (Pages CMS), lưu ở thư mục data/ -->
   <section id="top" class="hero">
     <div class="hero-inner">
-      <p class="eyebrow">QUA ỐNG KÍNH &amp; CÔNG VIỆC</p>
-      <h1>Lưu lại những gì tôi <em>thấy</em>, làm và nghĩ.</h1>
-      <p class="hero-sub">[Chức danh] · [Nơi sống / làm việc]</p>
+      <p class="eyebrow" id="hero-eyebrow"></p>
+      <h1 id="hero-title"></h1>
+      <p class="hero-sub" id="hero-sub"></p>
     </div>
   </section>
 
-  <!-- ===== BỘ SƯU TẬP ẢNH: danh sách ảnh nằm trong assets/main.js ===== -->
   <section id="anh" class="section">
     <div class="section-head">
       <h2>Bộ sưu tập ảnh</h2>
@@ -54,98 +52,31 @@
     <p class="hint">Bấm vào ảnh để xem lớn và thông số chụp.</p>
   </section>
 
-  <!-- ===== HÀNH TRÌNH & VĂN HÓA ===== -->
   <section id="hanh-trinh" class="section alt">
     <h2>Hành trình &amp; văn hóa</h2>
     <p class="lead">Những nơi đã đến, những phong tục đã được trải nghiệm.</p>
-    <div class="cards">
-      <article class="place">
-        <div class="thumb" data-label="[Ảnh địa điểm]"></div>
-        <p class="kind">ĐỊA ĐIỂM</p>
-        <h3>[Tên địa điểm 1]</h3>
-        <p>[Mô tả ngắn, mẹo đi lại, thời điểm đẹp nhất trong năm.]</p>
-      </article>
-      <article class="place">
-        <div class="thumb" data-label="[Ảnh địa điểm]"></div>
-        <p class="kind">ĐỊA ĐIỂM</p>
-        <h3>[Tên địa điểm 2]</h3>
-        <p>[Mô tả ngắn, mẹo đi lại, thời điểm đẹp nhất trong năm.]</p>
-      </article>
-      <article class="place">
-        <div class="thumb" data-label="[Ảnh lễ hội]"></div>
-        <p class="kind">VĂN HÓA</p>
-        <h3>[Lễ hội / phong tục]</h3>
-        <p>[Trải nghiệm của bạn: ở đâu, ý nghĩa, điều đáng nhớ.]</p>
-      </article>
-    </div>
+    <div class="cards" id="places"></div>
   </section>
 
-  <!-- ===== HỒ SƠ ===== -->
   <section id="ho-so" class="section profile">
     <div class="profile-intro">
       <h2>Hồ sơ</h2>
-      <p class="lead">[Hai, ba câu giới thiệu bản thân và công việc hiện tại.]</p>
-      <a class="btn" href="files/cv.pdf" download>Tải CV (PDF)</a>
+      <p class="lead" id="profile-intro"></p>
+      <a class="btn" id="cv-link" href="#ho-so">Tải CV (PDF)</a>
     </div>
     <div class="profile-grid">
-      <div>
-        <h3 class="label">CÔNG VIỆC</h3>
-        <ul class="timeline">
-          <li><strong>[Vị trí] · [Đơn vị]</strong><span>[Năm] — nay</span></li>
-          <li><strong>[Vị trí] · [Đơn vị]</strong><span>[Năm] — [Năm]</span></li>
-        </ul>
-      </div>
-      <div>
-        <h3 class="label">HỌC TẬP</h3>
-        <ul class="timeline">
-          <li><strong>[Bằng cấp] · [Trường]</strong><span>[Năm] — [Năm]</span></li>
-          <li><strong>[Chứng chỉ / khóa học]</strong><span>[Năm]</span></li>
-        </ul>
-      </div>
-      <div>
-        <h3 class="label">NGHIÊN CỨU KHOA HỌC</h3>
-        <ul class="timeline">
-          <li><strong>[Tên đề tài]</strong><span>[Cấp đề tài / tạp chí] · [Năm]</span></li>
-          <li><strong>[Tên đề tài]</strong><span>[Hội nghị] · [Năm]</span></li>
-        </ul>
-      </div>
-      <div>
-        <h3 class="label">GIẢI THƯỞNG &amp; HOẠT ĐỘNG</h3>
-        <ul class="timeline">
-          <li><strong>[Giải thưởng / danh hiệu]</strong><span>[Đơn vị trao] · [Năm]</span></li>
-          <li><strong>[Hoạt động tiêu biểu]</strong><span>[Năm]</span></li>
-        </ul>
-      </div>
+      <div><h3 class="label">CÔNG VIỆC</h3><ul class="timeline" id="tl-work"></ul></div>
+      <div><h3 class="label">HỌC TẬP</h3><ul class="timeline" id="tl-education"></ul></div>
+      <div><h3 class="label">NGHIÊN CỨU KHOA HỌC</h3><ul class="timeline" id="tl-research"></ul></div>
+      <div><h3 class="label">GIẢI THƯỞNG &amp; HOẠT ĐỘNG</h3><ul class="timeline" id="tl-awards"></ul></div>
     </div>
   </section>
 
-  <!-- ===== CÔNG VIỆC CHUYÊN MÔN ===== -->
   <section id="chuyen-mon" class="section alt">
     <h2>Công việc chuyên môn</h2>
-    <p class="lead">[Một câu tóm tắt lĩnh vực chuyên môn và thế mạnh của bạn.]</p>
-
-    <!-- Kỹ năng: thêm/bớt nhóm và thẻ kỹ năng tùy ý -->
+    <p class="lead" id="expertise-summary"></p>
     <h3 class="label">KỸ NĂNG</h3>
-    <div class="skills">
-      <div class="skill-group">
-        <h4>[Nhóm kỹ năng chuyên môn]</h4>
-        <ul class="tags"><li>[Kỹ năng]</li><li>[Kỹ năng]</li><li>[Kỹ năng]</li><li>[Kỹ năng]</li></ul>
-      </div>
-      <div class="skill-group">
-        <h4>[Công cụ / phần mềm]</h4>
-        <ul class="tags"><li>[Công cụ]</li><li>[Công cụ]</li><li>[Công cụ]</li></ul>
-      </div>
-      <div class="skill-group">
-        <h4>Kỹ năng mềm</h4>
-        <ul class="tags"><li>[Quản lý dự án]</li><li>[Làm việc nhóm]</li><li>[Thuyết trình]</li></ul>
-      </div>
-      <div class="skill-group">
-        <h4>Ngoại ngữ &amp; chứng chỉ</h4>
-        <ul class="tags"><li>[Tiếng Anh — trình độ]</li><li>[Chứng chỉ]</li></ul>
-      </div>
-    </div>
-
-    <!-- Dự án: mỗi dự án là một thẻ <article class="project">, đổi data-type thành "chuyen-mon" hoặc "thuc-te" -->
+    <div class="skills" id="skills"></div>
     <div class="section-head" id="du-an">
       <h3 class="label" style="margin:0">DỰ ÁN</h3>
       <div class="filters" role="group" aria-label="Lọc dự án">
@@ -154,79 +85,23 @@
         <button type="button" class="chip pchip" data-pfilter="thuc-te">Dự án thực tế</button>
       </div>
     </div>
-    <div class="projects" id="projects">
-      <article class="project" data-type="chuyen-mon">
-        <p class="kind">DỰ ÁN CHUYÊN MÔN · [Năm]</p>
-        <h3>[Tên dự án chuyên môn 1]</h3>
-        <dl>
-          <dt>Bối cảnh</dt><dd>[Vấn đề cần giải quyết, đơn vị chủ trì / khách hàng.]</dd>
-          <dt>Vai trò</dt><dd>[Vị trí của bạn và phần việc chính.]</dd>
-          <dt>Kết quả</dt><dd>[Kết quả cụ thể, số liệu nếu có.]</dd>
-        </dl>
-        <ul class="tags small"><li>[Công cụ]</li><li>[Kỹ năng]</li></ul>
-      </article>
-      <article class="project" data-type="chuyen-mon">
-        <p class="kind">DỰ ÁN CHUYÊN MÔN · [Năm]</p>
-        <h3>[Tên dự án chuyên môn 2]</h3>
-        <dl>
-          <dt>Bối cảnh</dt><dd>[Vấn đề cần giải quyết, đơn vị chủ trì / khách hàng.]</dd>
-          <dt>Vai trò</dt><dd>[Vị trí của bạn và phần việc chính.]</dd>
-          <dt>Kết quả</dt><dd>[Kết quả cụ thể, số liệu nếu có.]</dd>
-        </dl>
-        <ul class="tags small"><li>[Công cụ]</li><li>[Kỹ năng]</li></ul>
-      </article>
-      <article class="project" data-type="thuc-te">
-        <p class="kind">DỰ ÁN THỰC TẾ · [Năm]</p>
-        <h3>[Tên dự án thực tế 1]</h3>
-        <dl>
-          <dt>Địa điểm</dt><dd>[Nơi triển khai.]</dd>
-          <dt>Vai trò</dt><dd>[Bạn đã trực tiếp làm gì.]</dd>
-          <dt>Kết quả</dt><dd>[Sản phẩm / tác động thực tế.]</dd>
-        </dl>
-        <ul class="tags small"><li>[Công cụ]</li><li>[Kỹ năng]</li></ul>
-      </article>
-      <article class="project" data-type="thuc-te">
-        <p class="kind">DỰ ÁN THỰC TẾ · [Năm]</p>
-        <h3>[Tên dự án thực tế 2]</h3>
-        <dl>
-          <dt>Địa điểm</dt><dd>[Nơi triển khai.]</dd>
-          <dt>Vai trò</dt><dd>[Bạn đã trực tiếp làm gì.]</dd>
-          <dt>Kết quả</dt><dd>[Sản phẩm / tác động thực tế.]</dd>
-        </dl>
-        <ul class="tags small"><li>[Công cụ]</li><li>[Kỹ năng]</li></ul>
-      </article>
-    </div>
+    <div class="projects" id="projects"></div>
   </section>
 
-  <!-- ===== BLOG ===== -->
   <section id="blog" class="section">
-    <h2>Ghi chép</h2>
-    <div class="cards">
-      <a class="post" href="#blog">
-        <div class="thumb" data-label="[Ảnh bìa]"></div>
-        <p class="meta">[Ngày] · [Chủ đề]</p>
-        <h3>[Tiêu đề bài viết 1]</h3>
-      </a>
-      <a class="post" href="#blog">
-        <div class="thumb" data-label="[Ảnh bìa]"></div>
-        <p class="meta">[Ngày] · [Chủ đề]</p>
-        <h3>[Tiêu đề bài viết 2]</h3>
-      </a>
-      <a class="post" href="#blog">
-        <div class="thumb" data-label="[Ảnh bìa]"></div>
-        <p class="meta">[Ngày] · [Chủ đề]</p>
-        <h3>[Tiêu đề bài viết 3]</h3>
-      </a>
+    <div class="section-head">
+      <h2>Ghi chép</h2>
+      <a href="blog.html">Xem tất cả bài viết →</a>
     </div>
+    <div class="cards" id="latest-posts"></div>
   </section>
 </main>
 
 <footer class="site-footer">
-  <span>© <span id="year">2026</span> nguyenvietduong.com</span>
-  <span><a href="mailto:[email]">Email</a> · <a href="#">Facebook</a> · <a href="#">Instagram</a></span>
+  <span>© <span class="year">2026</span> nguyenvietduong.com</span>
+  <span class="contact-links"></span>
 </footer>
 
-<!-- Khung xem ảnh lớn -->
 <div class="lightbox" id="lightbox" hidden>
   <button type="button" class="lb-close" aria-label="Đóng">
     <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
