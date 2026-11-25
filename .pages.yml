@@ -35,8 +35,17 @@ content:
         label: Tóm tắt ngắn
         type: text
       - name: body
-        label: Nội dung bài viết
+        label: Nội dung bài viết (bấm biểu tượng ảnh trên thanh công cụ để chèn ảnh vào giữa bài)
         type: rich-text
+        options:
+          format: html
+          image:
+            input: images
+            output: /images
+      - name: gallery
+        label: Bộ ảnh cuối bài (chọn được nhiều ảnh)
+        type: image
+        list: true
       - name: published
         label: Hiển thị trên website
         type: boolean
@@ -44,17 +53,18 @@ content:
 
   # ---------------- BỘ SƯU TẬP ẢNH ----------------
   - name: photos
-    label: Bộ sưu tập ảnh
+    label: Bộ sưu tập ảnh (mỗi mục là một bộ ảnh)
     type: file
     path: data/photos.json
     format: json
     list: true
     fields:
-      - name: image
-        label: Ảnh
+      - name: images
+        label: Ảnh (chọn được nhiều ảnh cùng lúc)
         type: image
+        list: true
       - name: title
-        label: Tên ảnh
+        label: Tên bộ ảnh
         type: string
       - name: category
         label: Thể loại
@@ -71,7 +81,7 @@ content:
         label: Thông số chụp (máy · ống kính · khẩu · tốc · ISO)
         type: string
       - name: tall
-        label: Ảnh dọc (chiếm 2 hàng)
+        label: Ảnh đầu tiên là ảnh dọc (chiếm 2 hàng)
         type: boolean
 
   # ---------------- HÀNH TRÌNH & VĂN HÓA ----------------
@@ -82,9 +92,10 @@ content:
     format: json
     list: true
     fields:
-      - name: image
-        label: Ảnh
+      - name: images
+        label: Ảnh (chọn được nhiều ảnh, ảnh đầu tiên làm ảnh đại diện)
         type: image
+        list: true
       - name: kind
         label: Loại
         type: select
