@@ -14,8 +14,12 @@
     "description": "[Mô tả ngắn, mẹo đi lại, thời điểm đẹp nhất trong năm.]"
   },
   {
+    "images": [
+      "/images/20260902_081529-2.jpg",
+      "/images/20260902_090258.jpg"
+    ],
     "kind": "van-hoa",
     "name": "[Lễ hội / phong tục]",
-    "description": "[Trải nghiệm của bạn: ở đâu, ý nghĩa, điều đáng nhớ.]"
+    "description": "[Trải nghiệm của bạn: ở đâu, ý nghĩa, điều đáng nhớ.]  "
   }
 ]
