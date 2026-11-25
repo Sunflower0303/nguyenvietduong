@@ -1,20 +1,21 @@
 [
   {
+    "images": [
+      "/images/IMG_20190219_1008014-1.jpg",
+      "/images/IMG_20190219_1120227.jpg"
+    ],
     "kind": "dia-diem",
     "name": "[Tên địa điểm 1]",
-    "description": "[Mô tả ngắn, mẹo đi lại, thời điểm đẹp nhất trong năm.]",
-    "images": []
+    "description": "[Mô tả ngắn, mẹo đi lại, thời điểm đẹp nhất trong năm.]"
   },
   {
     "kind": "dia-diem",
     "name": "[Tên địa điểm 2]",
-    "description": "[Mô tả ngắn, mẹo đi lại, thời điểm đẹp nhất trong năm.]",
-    "images": []
+    "description": "[Mô tả ngắn, mẹo đi lại, thời điểm đẹp nhất trong năm.]"
   },
   {
     "kind": "van-hoa",
     "name": "[Lễ hội / phong tục]",
-    "description": "[Trải nghiệm của bạn: ở đâu, ý nghĩa, điều đáng nhớ.]",
-    "images": []
+    "description": "[Trải nghiệm của bạn: ở đâu, ý nghĩa, điều đáng nhớ.]"
   }
 ]
