@@ -67,11 +67,14 @@
   function renderHome(site, photos, places, posts) {
     site = site || {};
     const h = site.hero || {};
-    $('hero-eyebrow').textContent = h.eyebrow || '';
-    let title = esc(h.title || '');
-    if (h.highlight) title = title.replace(esc(h.highlight), '<em>' + esc(h.highlight) + '</em>');
-    $('hero-title').innerHTML = title;
-    $('hero-sub').textContent = h.subtitle || '';
+    // Chỉ thay chữ khi trong data có nội dung; nếu không, giữ chữ mặc định trong index.html
+    if (h.eyebrow) $('hero-eyebrow').textContent = h.eyebrow;
+    if (h.title) {
+      let title = esc(h.title);
+      if (h.highlight) title = title.replace(esc(h.highlight), '<em>' + esc(h.highlight) + '</em>');
+      $('hero-title').innerHTML = title;
+    }
+    if (h.subtitle) $('hero-sub').textContent = h.subtitle;
     if (h.image) {
       document.querySelector('.hero').style.backgroundImage =
         'linear-gradient(to top, rgba(0,0,0,.65), rgba(0,0,0,.05) 60%), url("' + src(h.image).replace(/"/g, '%22') + '")';
