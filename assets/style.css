@@ -245,3 +245,20 @@ body {
 .article-body blockquote { margin: 28px 0; padding: 4px 0 4px 24px; border-left: 2px solid var(--accent); font-family: var(--serif); font-size: 22px; font-style: italic; color: var(--text); }
 .article-body ul, .article-body ol { padding-left: 24px; margin: 0 0 20px; }
 .article-body li { margin-bottom: 8px; }
+
+/* ===== Xem nhiều ảnh ===== */
+.lb-nav { position: absolute; top: 50%; transform: translateY(-50%); width: 52px; height: 52px; border-radius: 50%; border: 0; cursor: pointer; background: rgba(255,255,255,.1); color: #fff; display: flex; align-items: center; justify-content: center; z-index: 2; }
+.lb-nav:hover { background: rgba(255,255,255,.2); }
+.lb-nav[hidden] { display: none; }
+.lb-prev { left: 16px; }
+.lb-next { right: 16px; }
+#lb-count { color: var(--muted2); }
+.place-open { position: relative; width: 100%; padding: 0; border: 0; cursor: zoom-in; font: inherit; color: inherit; display: block; }
+.place-open:disabled { cursor: default; }
+.badge { position: absolute; right: 10px; bottom: 10px; padding: 4px 10px; border-radius: 999px; font-size: 12px; background: rgba(0,0,0,.6); color: #fff; }
+#post-gallery h2 { font-family: var(--serif); font-weight: 400; font-size: 28px; margin: 48px 0 16px; }
+.post-gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 8px; }
+.pg-item { aspect-ratio: 1 / 1; padding: 0; border: 0; overflow: hidden; border-radius: 10px; background: var(--ph); cursor: zoom-in; }
+.pg-item img { width: 100%; height: 100%; object-fit: cover; transition: transform .4s ease; }
+.pg-item:hover img { transform: scale(1.05); }
+@media (max-width: 760px) { .lb-nav { width: 44px; height: 44px; } .lb-prev { left: 6px; } .lb-next { right: 6px; } }

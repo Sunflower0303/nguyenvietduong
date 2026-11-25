@@ -1,18 +1,20 @@
 [
   {
-    "image": "/images/20260902_081529-1.jpg",
     "kind": "dia-diem",
-    "name": "Kiến Giang, Lệ Thủy, Quảng Bình",
-    "description": "Quốc Khánh 2/9 Lệ Thủy Quảng "
+    "name": "[Tên địa điểm 1]",
+    "description": "[Mô tả ngắn, mẹo đi lại, thời điểm đẹp nhất trong năm.]",
+    "images": []
   },
   {
     "kind": "dia-diem",
-    "name": "Côn Đảo Vũng Tàu",
-    "description": "Cảnh sắc Côn Đảo"
+    "name": "[Tên địa điểm 2]",
+    "description": "[Mô tả ngắn, mẹo đi lại, thời điểm đẹp nhất trong năm.]",
+    "images": []
   },
   {
     "kind": "van-hoa",
     "name": "[Lễ hội / phong tục]",
-    "description": "[Trải nghiệm của bạn: ở đâu, ý nghĩa, điều đáng nhớ.]"
+    "description": "[Trải nghiệm của bạn: ở đâu, ý nghĩa, điều đáng nhớ.]",
+    "images": []
   }
 ]
