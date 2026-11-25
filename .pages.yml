@@ -1,0 +1,214 @@
+# Cấu hình trang quản trị Pages CMS (https://app.pagescms.org)
+# Ảnh và file tải lên được lưu vào thư mục images/
+
+media:
+  input: images
+  output: /images
+
+content:
+  # ---------------- BÀI VIẾT BLOG ----------------
+  - name: posts
+    label: Bài viết blog
+    type: file
+    path: data/posts.json
+    format: json
+    list: true
+    fields:
+      - name: title
+        label: Tiêu đề
+        type: string
+        required: true
+      - name: slug
+        label: Đường dẫn (không dấu, nối bằng gạch ngang, vd. chuyen-di-ha-giang)
+        type: string
+        required: true
+      - name: date
+        label: Ngày đăng
+        type: date
+      - name: topic
+        label: Chủ đề
+        type: string
+      - name: cover
+        label: Ảnh bìa
+        type: image
+      - name: excerpt
+        label: Tóm tắt ngắn
+        type: text
+      - name: body
+        label: Nội dung bài viết
+        type: rich-text
+      - name: published
+        label: Hiển thị trên website
+        type: boolean
+        default: true
+
+  # ---------------- BỘ SƯU TẬP ẢNH ----------------
+  - name: photos
+    label: Bộ sưu tập ảnh
+    type: file
+    path: data/photos.json
+    format: json
+    list: true
+    fields:
+      - name: image
+        label: Ảnh
+        type: image
+      - name: title
+        label: Tên ảnh
+        type: string
+      - name: category
+        label: Thể loại
+        type: select
+        options:
+          values:
+            - value: phong-canh
+              label: Phong cảnh
+            - value: duong-pho
+              label: Đường phố
+            - value: chan-dung
+              label: Chân dung
+      - name: exif
+        label: Thông số chụp (máy · ống kính · khẩu · tốc · ISO)
+        type: string
+      - name: tall
+        label: Ảnh dọc (chiếm 2 hàng)
+        type: boolean
+
+  # ---------------- HÀNH TRÌNH & VĂN HÓA ----------------
+  - name: places
+    label: Hành trình & văn hóa
+    type: file
+    path: data/places.json
+    format: json
+    list: true
+    fields:
+      - name: image
+        label: Ảnh
+        type: image
+      - name: kind
+        label: Loại
+        type: select
+        options:
+          values:
+            - value: dia-diem
+              label: Địa điểm
+            - value: van-hoa
+              label: Văn hóa
+            - value: am-thuc
+              label: Ẩm thực
+      - name: name
+        label: Tên
+        type: string
+      - name: description
+        label: Mô tả
+        type: text
+
+  # ---------------- THÔNG TIN CHUNG ----------------
+  - name: site
+    label: Trang chủ, hồ sơ & chuyên môn
+    type: file
+    path: data/site.json
+    format: json
+    fields:
+      - name: hero
+        label: Phần đầu trang
+        type: object
+        fields:
+          - name: image
+            label: Ảnh nền đầu trang (nên ảnh ngang, rộng ~2400px)
+            type: image
+          - name: eyebrow
+            label: Dòng chữ nhỏ phía trên
+            type: string
+          - name: title
+            label: Câu tiêu đề lớn
+            type: string
+          - name: highlight
+            label: Từ được tô màu (phải nằm trong câu tiêu đề)
+            type: string
+          - name: subtitle
+            label: Dòng giới thiệu bên dưới
+            type: string
+
+      - name: profile
+        label: Hồ sơ
+        type: object
+        fields:
+          - name: intro
+            label: Giới thiệu bản thân
+            type: text
+          - name: cv
+            label: File CV (PDF)
+            type: file
+          - name: work
+            label: Công việc
+            type: object
+            list: true
+            fields:
+              - { name: title, label: Vị trí · Đơn vị, type: string }
+              - { name: time, label: Thời gian, type: string }
+          - name: education
+            label: Học tập
+            type: object
+            list: true
+            fields:
+              - { name: title, label: Bằng cấp · Trường, type: string }
+              - { name: time, label: Thời gian, type: string }
+          - name: research
+            label: Nghiên cứu khoa học
+            type: object
+            list: true
+            fields:
+              - { name: title, label: Tên đề tài, type: string }
+              - { name: time, label: Cấp / tạp chí · Năm, type: string }
+          - name: awards
+            label: Giải thưởng & hoạt động
+            type: object
+            list: true
+            fields:
+              - { name: title, label: Tên, type: string }
+              - { name: time, label: Đơn vị · Năm, type: string }
+
+      - name: expertise
+        label: Công việc chuyên môn
+        type: object
+        fields:
+          - name: summary
+            label: Tóm tắt chuyên môn
+            type: text
+          - name: skills
+            label: Nhóm kỹ năng
+            type: object
+            list: true
+            fields:
+              - { name: group, label: Tên nhóm, type: string }
+              - { name: items, label: Kỹ năng, type: string, list: true }
+          - name: projects
+            label: Dự án
+            type: object
+            list: true
+            fields:
+              - name: type
+                label: Loại dự án
+                type: select
+                options:
+                  values:
+                    - value: chuyen-mon
+                      label: Dự án chuyên môn
+                    - value: thuc-te
+                      label: Dự án thực tế
+              - { name: title, label: Tên dự án, type: string }
+              - { name: year, label: Năm, type: string }
+              - { name: context, label: Bối cảnh / Địa điểm, type: text }
+              - { name: role, label: Vai trò, type: text }
+              - { name: result, label: Kết quả, type: text }
+              - { name: tags, label: Công cụ / kỹ năng, type: string, list: true }
+
+      - name: contact
+        label: Liên hệ
+        type: object
+        fields:
+          - { name: email, label: Email, type: string }
+          - { name: facebook, label: Link Facebook, type: string }
+          - { name: instagram, label: Link Instagram, type: string }
+          - { name: linkedin, label: Link LinkedIn, type: string }
